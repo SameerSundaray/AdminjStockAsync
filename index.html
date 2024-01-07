@@ -90,12 +90,13 @@
             // Simulating an asynchronous operation
             await simulateAsyncOperation();
 
-            // Rest of your existing code...
+            
             const productName = document.getElementById('productName').value;
             const sellingPrice = parseFloat(document.getElementById('sellingPrice').value);
 
             if (productName.trim() === '' || isNaN(sellingPrice) || sellingPrice <= 0) {
                 alert('Please enter valid product details.');
+                event.preventDefault(); // Prevent the default action
                 return;
             }
 
